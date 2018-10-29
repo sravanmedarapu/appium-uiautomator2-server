@@ -231,7 +231,7 @@ public abstract class ElementHelpers {
             return Float.toString(nodeInfo.getRangeInfo().getCurrent());
         }
         CharSequence text = nodeInfo.getText();
-        return text == null ? null : text.toString();
+        return text == null ? "" : text.toString();
     }
 
     @Nullable
@@ -246,7 +246,7 @@ public abstract class ElementHelpers {
                     "mCachedNode", element);
             if (nodeInfo != null && Objects.equals(nodeInfo.getClassName(), Toast.class.getName())) {
                 CharSequence text = nodeInfo.getText();
-                return text == null ? null : text.toString();
+                return text == null ? "" : text.toString();
             }
 
             return getText(AccessibilityNodeInfoGetter.fromUiObject(element));
