@@ -26,6 +26,9 @@ public class GetText extends SafeRequestHandler {
             return new AppiumResponse(getSessionId(request), WDStatus.NO_SUCH_ELEMENT);
         }
         text = element.getText();
+        if (text == null) {
+          text = "";
+        }
         Logger.info("Get Text :" + text);
         return new AppiumResponse(getSessionId(request), WDStatus.SUCCESS, text);
     }
