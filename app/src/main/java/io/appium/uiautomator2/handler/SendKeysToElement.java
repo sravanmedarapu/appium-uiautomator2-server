@@ -45,7 +45,8 @@ public class SendKeysToElement extends SafeRequestHandler {
     }
 
     private static boolean isTextFieldClear(AndroidElement element) throws UiObjectNotFoundException {
-        return element.getText() == null || element.getText().isEmpty();
+        String text = element.getText();
+        return text == null || text.isEmpty();
     }
 
     @Override
@@ -105,5 +106,3 @@ public class SendKeysToElement extends SafeRequestHandler {
         return new AppiumResponse(getSessionId(request), WDStatus.SUCCESS, actionMsg);
     }
 }
-
-

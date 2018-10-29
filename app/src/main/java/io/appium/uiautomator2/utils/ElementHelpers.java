@@ -221,10 +221,9 @@ public abstract class ElementHelpers {
                 Arrays.toString(Attribute.exposableAliases())), attributeName);
     }
 
-    @Nullable
     public static String getText(@Nullable AccessibilityNodeInfo nodeInfo) {
         if (nodeInfo == null) {
-            return null;
+            return "";
         }
 
         if (nodeInfo.getRangeInfo() != null) {
@@ -234,7 +233,6 @@ public abstract class ElementHelpers {
         return text == null ? "" : text.toString();
     }
 
-    @Nullable
     public static String getText(Object element) throws UiObjectNotFoundException {
         if (element instanceof UiObject2) {
             /*
