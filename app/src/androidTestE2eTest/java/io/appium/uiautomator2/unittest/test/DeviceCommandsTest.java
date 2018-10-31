@@ -352,7 +352,6 @@ public class DeviceCommandsTest extends BaseTest {
         assertEquals("Access'ibility", response.getValue());
     }
 
-
     @Test
     public void findElementWithAttributes() throws JSONException {
         scrollTo("Views");

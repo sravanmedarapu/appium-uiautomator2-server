@@ -44,7 +44,9 @@ public class CustomUiSelector {
         }
         put(Attribute.PACKAGE, charSequenceToString(uiAutomationElement.getPackageName()));
         put(Attribute.CLASS, charSequenceToString(uiAutomationElement.getClassName()));
-        put(Attribute.TEXT, charSequenceToString(uiAutomationElement.getText()));
+        // the element will give empty strings as "" but for searching we need null
+        String text = charSequenceToString(uiAutomationElement.getText());
+        put(Attribute.TEXT, (text != null && text.isEmpty()) ? null : text);
         put(Attribute.CONTENT_DESC, charSequenceToString(uiAutomationElement.getContentDescription()));
         put(Attribute.RESOURCE_ID, charSequenceToString(uiAutomationElement.getResourceId()));
         put(Attribute.CHECKABLE, uiAutomationElement.isCheckable());
