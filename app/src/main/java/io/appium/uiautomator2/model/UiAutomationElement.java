@@ -182,4 +182,10 @@ public class UiAutomationElement extends UiElement<AccessibilityNodeInfo, UiAuto
     protected Map<Attribute, Object> getAttributes() {
         return attributes;
     }
+
+    @Nullable
+    public String getNullableText() {
+        String text = getText();
+        return (text != null && text.isEmpty()) ? null : text;
+    }
 }
