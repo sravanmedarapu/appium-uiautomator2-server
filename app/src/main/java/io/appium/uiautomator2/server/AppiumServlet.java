@@ -70,6 +70,7 @@ import io.appium.uiautomator2.handler.SetClipboard;
 import io.appium.uiautomator2.handler.Source;
 import io.appium.uiautomator2.handler.Status;
 import io.appium.uiautomator2.handler.Swipe;
+import io.appium.uiautomator2.handler.OpenQuickSettings;
 import io.appium.uiautomator2.handler.TouchDown;
 import io.appium.uiautomator2.handler.TouchLongClick;
 import io.appium.uiautomator2.handler.TouchMove;
@@ -111,6 +112,7 @@ public class AppiumServlet implements IHttpServlet {
     }
 
     private void registerPostHandler() {
+        register(postHandler, new OpenQuickSettings("/wd/hub/session/:sessionId/appium/device/quickSettings"));
         register(postHandler, new NewSession("/wd/hub/session"));
         register(postHandler, new FindElement("/wd/hub/session/:sessionId/element"));
         register(postHandler, new FindElements("/wd/hub/session/:sessionId/elements"));
